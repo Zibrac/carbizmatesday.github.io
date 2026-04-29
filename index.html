@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mate's Day — May 8 | Carbiz</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --oceanic: #54c1af;
+    --oceanic-dark: #3da898;
+    --oceanic-deep: #1d6b61;
+    --asphalt: #1a2e2b;
+    --asphalt-mid: #1f3733;
+    --asphalt-light: #274d47;
+    --coral: #ef4657;
+    --lemon: #fee69a;
+    --sunset: #f79c63;
+    --pool: #5e8cf4;
+    --white: #ffffff;
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Open Sans', sans-serif; background: var(--asphalt); color: var(--white); overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 14px 48px; display: flex; align-items: center; justify-content: space-between;
+    background: rgba(26,46,43,0.95); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(84,193,175,0.15);
+  }
+  .nav-logo { display: flex; align-items: center; text-decoration: none; }
+  .nav-logo img { height: 34px; display: block; filter: brightness(0) invert(1); }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; font-weight: 600; letter-spacing: 0.3px; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--oceanic); }
+  .nav-badge { background: var(--oceanic); color: var(--asphalt); font-size: 12px; font-weight: 800; letter-spacing: 1px; padding: 6px 16px; border-radius: 100px; text-transform: uppercase; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh; display: flex; flex-direction: column; align-items: center;
+    justify-content: center; text-align: center; position: relative;
+    padding: 120px 24px 80px; overflow: hidden;
+    background:
+      radial-gradient(ellipse 100% 80% at 50% 110%, rgba(84,193,175,0.28) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 50% at 8% 8%, rgba(84,193,175,0.14) 0%, transparent 50%),
+      radial-gradient(ellipse 50% 40% at 92% 15%, rgba(84,193,175,0.09) 0%, transparent 50%),
+      var(--asphalt);
+  }
+  .pie-bg { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+  .pie-float {
+    position: absolute; opacity: 0;
+    animation: floatPie linear infinite;
+    user-select: none; line-height: 1;
+  }
+  @keyframes floatPie {
+    0%   { transform: translateY(0) rotate(-5deg) scale(0.85); opacity: 0; }
+    8%   { opacity: 0.38; }
+    92%  { opacity: 0.22; }
+    100% { transform: translateY(-115vh) rotate(20deg) scale(1.05); opacity: 0; }
+  }
+  .hero-eyebrow {
+    position: relative; display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(84,193,175,0.14); border: 1px solid rgba(84,193,175,0.35);
+    border-radius: 100px; padding: 8px 20px; font-size: 13px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--oceanic);
+    margin-bottom: 32px; animation: fadeUp 0.8s ease both;
+  }
+  .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--oceanic); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.5); } }
+  .hero h1 {
+    position: relative; font-family: 'Syne', sans-serif;
+    font-size: clamp(60px, 9vw, 114px); font-weight: 800; line-height: 0.93;
+    letter-spacing: -3px; margin-bottom: 14px; animation: fadeUp 0.8s ease 0.1s both;
+  }
+  .hero h1 .may { color: var(--oceanic); }
+  .hero-date {
+    position: relative; font-family: 'Syne', sans-serif;
+    font-size: clamp(14px, 2.2vw, 22px); font-weight: 700;
+    color: rgba(255,255,255,0.65); letter-spacing: 4px; text-transform: uppercase;
+    margin-bottom: 32px; animation: fadeUp 0.8s ease 0.2s both;
+  }
+  .hero-desc {
+    position: relative; max-width: 620px; font-size: 18px; line-height: 1.75;
+    color: rgba(255,255,255,0.82); margin-bottom: 48px; animation: fadeUp 0.8s ease 0.3s both;
+  }
+  .hero-ctas { position: relative; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; animation: fadeUp 0.8s ease 0.4s both; }
+  .btn-primary { background: var(--oceanic); color: var(--asphalt); padding: 16px 36px; border-radius: 100px; font-weight: 800; font-size: 15px; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
+  .btn-primary:hover { background: #3db8a6; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(84,193,175,0.4); }
+  .btn-secondary { background: rgba(255,255,255,0.08); color: var(--white); padding: 16px 36px; border-radius: 100px; font-weight: 700; font-size: 15px; text-decoration: none; border: 1px solid rgba(255,255,255,0.2); transition: all 0.2s; }
+  .btn-secondary:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px); }
+  .scroll-indicator { position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; opacity: 0.4; animation: fadeUp 1s ease 0.9s both; }
+  .scroll-indicator span { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; }
+  .scroll-chevron { animation: bounce 1.6s infinite; }
+  @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* SECTIONS */
+  section { padding: 96px 24px; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-label { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--oceanic); margin-bottom: 20px; }
+  .section-label::before { content: ''; display: block; width: 24px; height: 2px; background: var(--oceanic); }
+  .section-title { font-family: 'Syne', sans-serif; font-size: clamp(32px, 4vw, 52px); font-weight: 800; line-height: 1.05; letter-spacing: -1.5px; margin-bottom: 20px; }
+  .section-body { font-size: 17px; line-height: 1.75; color: rgba(255,255,255,0.75); max-width: 620px; }
+
+  /* WHAT IS */
+  .what-is { background: var(--asphalt-mid); }
+  .what-is-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .stat-blocks { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .stat-block { background: rgba(0,0,0,0.2); border: 1px solid rgba(84,193,175,0.12); border-radius: 16px; padding: 28px 24px; transition: border-color 0.2s, transform 0.2s; }
+  .stat-block:hover { border-color: rgba(84,193,175,0.35); transform: translateY(-3px); }
+  .stat-block:nth-child(1) { border-top: 3px solid var(--oceanic); }
+  .stat-block:nth-child(2) { border-top: 3px solid var(--coral); }
+  .stat-block:nth-child(3) { border-top: 3px solid var(--pool); }
+  .stat-block:nth-child(4) { border-top: 3px solid var(--lemon); }
+  .stat-number { font-family: 'Syne', sans-serif; font-size: 44px; font-weight: 800; line-height: 1; margin-bottom: 8px; }
+  .stat-block:nth-child(1) .stat-number { color: var(--oceanic); }
+  .stat-block:nth-child(2) .stat-number { color: var(--coral); }
+  .stat-block:nth-child(3) .stat-number { color: var(--pool); }
+  .stat-block:nth-child(4) .stat-number { color: var(--lemon); }
+  .stat-label { font-size: 13px; line-height: 1.5; color: rgba(255,255,255,0.6); font-weight: 600; }
+
+  /* HOW TO */
+  .steps-section { background: var(--asphalt); }
+  .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+  .step-card { position: relative; background: var(--asphalt-mid); border: 1px solid rgba(84,193,175,0.1); border-radius: 20px; padding: 40px 32px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; }
+  .step-card:hover { transform: translateY(-4px); border-color: rgba(84,193,175,0.3); }
+  .step-number { font-family: 'Syne', sans-serif; font-size: 80px; font-weight: 800; line-height: 1; color: rgba(84,193,175,0.08); position: absolute; top: 16px; right: 24px; letter-spacing: -4px; }
+  .step-icon { width: 52px; height: 52px; background: rgba(84,193,175,0.12); border: 1px solid rgba(84,193,175,0.25); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 24px; }
+  .step-title { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 700; margin-bottom: 12px; }
+  .step-desc { font-size: 15px; line-height: 1.7; color: rgba(255,255,255,0.65); }
+
+  /* CARBIZ DAY */
+  .day-section {
+    background: linear-gradient(135deg, var(--oceanic-deep) 0%, var(--asphalt-mid) 55%, var(--asphalt) 100%);
+    position: relative; overflow: hidden;
+  }
+  .day-section::before {
+    content: ''; position: absolute; top: -180px; right: -180px; width: 550px; height: 550px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(84,193,175,0.18) 0%, transparent 65%); pointer-events: none;
+  }
+  .day-section::after {
+    content: ''; position: absolute; bottom: -100px; left: -100px; width: 380px; height: 380px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(84,193,175,0.1) 0%, transparent 65%); pointer-events: none;
+  }
+  .day-header { text-align: center; margin-bottom: 56px; }
+  .activity-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 60px; }
+  .activity-card {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(84,193,175,0.2);
+    border-radius: 20px; padding: 32px 20px; text-align: center;
+    transition: transform 0.2s, background 0.2s; position: relative; overflow: hidden;
+  }
+  .activity-card:hover { transform: translateY(-4px); background: rgba(84,193,175,0.1); }
+  .activity-card::before {
+    content: attr(data-step); position: absolute; top: 14px; left: 16px;
+    font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 800;
+    letter-spacing: 2px; color: rgba(84,193,175,0.45);
+  }
+  .activity-emoji { font-size: 44px; margin-bottom: 16px; display: block; line-height: 1; }
+  .activity-title { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+  .activity-desc { font-size: 13px; line-height: 1.65; color: rgba(255,255,255,0.65); }
+
+  /* map embed */
+  .map-embed-wrapper { position: relative; border-radius: 20px; overflow: hidden; border: 2px solid rgba(84,193,175,0.25); box-shadow: 0 24px 64px rgba(0,0,0,0.35); }
+  .map-embed-header { background: rgba(84,193,175,0.12); border-bottom: 1px solid rgba(84,193,175,0.2); padding: 16px 24px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .map-route-badge { background: var(--oceanic); color: var(--asphalt); font-size: 11px; font-weight: 800; letter-spacing: 1.5px; padding: 5px 12px; border-radius: 100px; text-transform: uppercase; white-space: nowrap; }
+  .map-route-desc { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.8); }
+  .map-route-desc span { color: var(--oceanic); font-weight: 700; }
+  .map-embed-wrapper iframe { display: block; width: 100%; height: 420px; border: none; }
+  .map-footer-note { background: rgba(0,0,0,0.2); padding: 14px 24px; font-size: 12px; color: rgba(255,255,255,0.5); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+  /* AUS MAP */
+  .aus-map-section { background: var(--asphalt); position: relative; overflow: hidden; }
+  .aus-map-section::before { content: ''; position: absolute; top: -200px; right: -200px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(84,193,175,0.06) 0%, transparent 70%); pointer-events: none; }
+  .map-header { text-align: center; margin-bottom: 60px; }
+  .australia-map-container { max-width: 780px; margin: 0 auto 64px; }
+  .aus-map-svg { width: 100%; filter: drop-shadow(0 0 40px rgba(84,193,175,0.1)); }
+
+  /* STATE CARDS */
+  .states-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .state-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(84,193,175,0.12); border-radius: 16px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; }
+  .state-card:hover { transform: translateY(-3px); border-color: rgba(84,193,175,0.28); }
+  .state-header { background: rgba(84,193,175,0.1); border-bottom: 1px solid rgba(84,193,175,0.15); padding: 14px 20px; }
+  .state-abbr { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; color: var(--oceanic); }
+  .state-links { padding: 14px 18px; display: flex; flex-direction: column; gap: 6px; }
+  .state-link { display: flex; align-items: flex-start; gap: 10px; text-decoration: none; color: rgba(255,255,255,0.75); font-size: 13px; font-weight: 600; line-height: 1.4; padding: 7px 8px; border-radius: 8px; transition: background 0.15s, color 0.15s; }
+  .state-link:hover { background: rgba(84,193,175,0.1); color: var(--oceanic); }
+  .link-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--oceanic); margin-top: 5px; flex-shrink: 0; }
+  .link-type { display: block; font-size: 10px; font-weight: 400; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 1px; }
+
+  /* NATIONAL */
+  .national-section { background: var(--asphalt-mid); }
+  .national-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+  .national-card { background: rgba(0,0,0,0.2); border: 1px solid rgba(84,193,175,0.1); border-radius: 16px; padding: 28px 24px; transition: transform 0.2s, border-color 0.2s; text-decoration: none; color: inherit; display: block; }
+  .national-card:hover { transform: translateY(-3px); border-color: rgba(84,193,175,0.3); }
+  .national-card-tag { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; margin-bottom: 14px; display: inline-block; }
+  .tag-crisis  { background: rgba(239,70,87,0.15);  color: var(--coral); }
+  .tag-mental  { background: rgba(84,193,175,0.12);  color: var(--oceanic); }
+  .tag-women   { background: rgba(247,156,99,0.15);  color: var(--sunset); }
+  .tag-youth   { background: rgba(94,140,244,0.15);  color: var(--pool); }
+  .tag-connect { background: rgba(254,230,154,0.15); color: var(--lemon); }
+  .national-card-name { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+  .national-card-desc { font-size: 13px; line-height: 1.6; color: rgba(255,255,255,0.55); margin-bottom: 16px; }
+  .national-card-number { font-size: 18px; font-weight: 800; color: var(--oceanic); font-family: 'Syne', sans-serif; }
+  .national-card-link { font-size: 13px; color: var(--oceanic); font-weight: 600; margin-top: 8px; }
+
+  /* CTA */
+  .cta-banner { background: var(--oceanic); padding: 80px 24px; }
+  .cta-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+  .cta-banner .section-label { color: rgba(26,46,43,0.65); justify-content: center; }
+  .cta-banner .section-label::before { background: rgba(26,46,43,0.35); }
+  .cta-banner .section-title { color: var(--asphalt); font-size: clamp(32px, 4vw, 56px); margin-bottom: 24px; }
+  .cta-banner p { color: rgba(26,46,43,0.72); font-size: 18px; line-height: 1.7; margin-bottom: 36px; }
+  .btn-dark { background: var(--asphalt); color: var(--white); padding: 16px 40px; border-radius: 100px; font-weight: 800; font-size: 15px; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
+  .btn-dark:hover { background: #0e1e1b; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.3); }
+
+  /* FOOTER */
+  footer { background: var(--asphalt); padding: 44px 24px; border-top: 1px solid rgba(84,193,175,0.1); }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  .footer-text { font-size: 13px; color: rgba(255,255,255,0.4); max-width: 400px; line-height: 1.6; }
+
+  .crisis-bar { background: rgba(239,70,87,0.1); border: 1px solid rgba(239,70,87,0.2); border-radius: 12px; padding: 16px 24px; text-align: center; margin: 0 auto 40px; max-width: 700px; font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.85); }
+  .crisis-bar strong { color: var(--coral); }
+  .crisis-bar a { color: var(--oceanic); text-decoration: none; font-weight: 700; }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  @media (max-width: 960px) {
+    nav { padding: 14px 20px; }
+    .nav-links { display: none; }
+    .what-is-grid { grid-template-columns: 1fr; gap: 40px; }
+    .steps-grid { grid-template-columns: 1fr; }
+    .activity-steps { grid-template-columns: repeat(2, 1fr); }
+    .states-grid { grid-template-columns: repeat(2, 1fr); }
+    .national-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .states-grid, .national-grid, .activity-steps { grid-template-columns: 1fr; }
+    .stat-blocks { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">
+    <img src="https://i.imgur.com/eiZoRD7.png" alt="Carbiz" style="height:36px;display:block">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#what-is">About</a></li>
+    <li><a href="#how-to">How To</a></li>
+    <li><a href="#our-day">Our Day</a></li>
+    <li><a href="#resources">Resources</a></li>
+    <li><a href="#states">By State</a></li>
+  </ul>
+  <div class="nav-badge">May 8</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="pie-bg" id="pieBg"></div>
+
+  <div class="hero-eyebrow">
+    <div class="pulse"></div>
+    Thursday, 8 May 2025
+  </div>
+
+  <h1><span class="may">MAY</span><br>EIGHT</h1>
+  <div class="hero-date">Australia's Day of Mateship</div>
+
+  <p class="hero-desc">
+    Your reminder to reconnect — because the most powerful thing you can do for someone's mental health is simply show up. For everyone. No exceptions.
+  </p>
+
+  <div class="hero-ctas">
+    <a href="#our-day" class="btn-primary">What we're doing →</a>
+    <a href="#states" class="btn-secondary">Find support near you</a>
+  </div>
+
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <svg class="scroll-chevron" width="16" height="10" viewBox="0 0 16 10" fill="none">
+      <path d="M1 1L8 8L15 1" stroke="white" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </div>
+</section>
+
+<!-- WHAT IS -->
+<section class="what-is" id="what-is">
+  <div class="container">
+    <div class="what-is-grid">
+      <div>
+        <div class="section-label reveal">What is Mate's Day</div>
+        <h2 class="section-title reveal reveal-delay-1">Connection<br>saves lives.</h2>
+        <p class="section-body reveal reveal-delay-2" style="margin-bottom:20px">
+          MAYEIGHT is Movember's official day of mateship, held each year on May 8. It's a day to reconnect with someone you haven't caught up with in a while — a mate, a colleague, a sibling, a neighbour.
+        </p>
+        <p class="section-body reveal reveal-delay-3">
+          But loneliness doesn't discriminate. One in four Australians experience it at some point, and 25% of young Australians aged 15–24 report persistent loneliness. Whether you identify as male, female, or non-binary — reaching out matters. <strong style="color:var(--oceanic)">For everyone.</strong>
+        </p>
+      </div>
+      <div class="stat-blocks reveal reveal-delay-2">
+        <div class="stat-block"><div class="stat-number">1 in 4</div><div class="stat-label">Australians experience loneliness at some point in their lives</div></div>
+        <div class="stat-block"><div class="stat-number">25%</div><div class="stat-label">of young Australians aged 15–24 report persistent loneliness</div></div>
+        <div class="stat-block"><div class="stat-number">8</div><div class="stat-label">lives are lost to suicide every single day in Australia</div></div>
+        <div class="stat-block"><div class="stat-number">45%</div><div class="stat-label">of Australians will experience a mental health condition in their lifetime</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PIE QUIZ -->
+<section style="background:var(--asphalt);padding:80px 24px">
+  <div class="container" style="text-align:center">
+    <div class="section-label reveal" style="justify-content:center">Just for fun</div>
+    <h2 class="section-title reveal reveal-delay-1">Pie Quiz 🥧</h2>
+    <p class="section-body reveal reveal-delay-2" style="margin:0 auto 32px;text-align:center">What type of pie are you? Take the fun, quick quiz here.</p>
+    <a href="https://carbiz.typeform.com/piequiz26" target="_blank" class="btn-primary reveal reveal-delay-3">Take the test</a>
+  </div>
+</section>
+
+<!-- HOW TO -->
+<section class="steps-section" id="how-to">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="section-label reveal" style="justify-content:center">Three simple steps</div>
+      <h2 class="section-title reveal reveal-delay-1" style="text-align:center">How to <span style="color:var(--oceanic)">show up</span><br>this Mate's Day</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal reveal-delay-1">
+        <div class="step-number">01</div>
+        <div class="step-icon">📱</div>
+        <div class="step-title">Tee it up</div>
+        <p class="step-desc">Don't be the one waiting. They're probably waiting too. Be the first to send that text, DM, or voice note. It takes ten seconds and it might mean everything.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-number">02</div>
+        <div class="step-icon">📅</div>
+        <div class="step-title">Catch up</div>
+        <p class="step-desc">Lock it in. Saying "let's catch up soon" without a time and place goes nowhere. Set a day, a time, a location — coffee, a walk, a video call. Make it real.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-3">
+        <div class="step-number">03</div>
+        <div class="step-icon">💬</div>
+        <div class="step-title">Speak up</div>
+        <p class="step-desc">Ask how they're really going — and actually listen. You don't need answers, just be present. The conversation matters more than you know.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT CARBIZ IS DOING -->
+<section class="day-section" id="our-day">
+  <div class="container" style="position:relative;z-index:1">
+    <div class="day-header">
+      <div class="section-label reveal" style="justify-content:center">What we're doing</div>
+      <h2 class="section-title reveal reveal-delay-1" style="text-align:center">Carbiz Mate's Day<br><span style="color:var(--oceanic)">May 8 at Mascot</span></h2>
+              <p class="section-body reveal reveal-delay-2" style="text-align:center;margin:0 auto;max-width:560px">
+        This Mate's Day, if you're in the office, you'll receive your free lunch voucher in the morning. It's only valid for Friday 8th May and can be used for a pie (your choice) or a sausage roll.
+      </p>
+      <p class="reveal reveal-delay-3" style="text-align:center;margin:12px auto 0;max-width:500px;font-size:13px;font-style:italic;color:rgba(255,255,255,0.5)">
+        These vouchers are only available for people in the office on the specific day.
+      </p>
+    </div>
+
+    <div class="activity-steps reveal reveal-delay-1">
+      <div class="activity-card" data-step="STEP 1">
+        <span class="activity-emoji">🤝</span>
+        <div class="activity-title">Reach out to a colleague</div>
+        <p class="activity-desc">Tap someone on the shoulder — or send that message to a teammate you haven't properly spoken to in a while. Today's the day.</p>
+      </div>
+      <div class="activity-card" data-step="STEP 2">
+        <span class="activity-emoji">🚶</span>
+        <div class="activity-title">Walk to Patchett's Pies</div>
+        <p class="activity-desc">Lace up and head out together. It's a short stroll from the Mascot office to one of Sydney's most beloved pie shops — perfect for a chat on the move.</p>
+      </div>
+      <div class="activity-card" data-step="STEP 3">
+        <span class="activity-emoji">🥧</span>
+        <div class="activity-title">Grab a pie of your choice</div>
+        <p class="activity-desc">Classic beef? Chunky steak? Harrisa lamb? Whatever you're feeling, Patchett's has it sorted. Open Mon–Fri 6:30am–2:30pm.</p>
+      </div>
+      <div class="activity-card" data-step="STEP 4">
+        <span class="activity-emoji">🥤</span>
+        <div class="activity-title">Back to the office for a drink</div>
+        <p class="activity-desc">Stroll back to base, grab something cold from the fridge, and keep the conversations going. Good food, good people, good vibes.</p>
+      </div>
+    </div>
+
+    <!-- BRANCHES -->
+    <div style="margin-top:72px">
+      <div class="day-header">
+        <div class="section-label reveal" style="justify-content:center">All branches</div>
+        <h2 class="section-title reveal reveal-delay-1" style="text-align:center">May 8 at <span style="color:var(--oceanic)">your branch</span></h2>
+        <p class="section-body reveal reveal-delay-2" style="text-align:center;margin:0 auto;max-width:580px">
+          We'd love each branch to bring this to life in a way that works for your team. No overthinking needed — just something organic, social and a good excuse to connect with a colleague.
+        </p>
+      </div>
+      <div class="activity-steps reveal reveal-delay-2" style="grid-template-columns:repeat(3,1fr)">
+        <div class="activity-card" data-step="OPTION 1">
+          <span class="activity-emoji">🥾</span>
+          <div class="activity-title">Got a great bakery nearby?</div>
+          <p class="activity-desc">Take a walk or drive together. Find your local pie shop, bakery, or café and make it a team outing.</p>
+        </div>
+        <div class="activity-card" data-step="OPTION 2">
+          <span class="activity-emoji">🥧</span>
+          <div class="activity-title">Prefer to bring it in?</div>
+          <p class="activity-desc">Order a few pies and sit down together. It's a great excuse to stop and reconnect as a group.</p>
+        </div>
+        <div class="activity-card" data-step="OPTION 3">
+          <span class="activity-emoji">⏱</span>
+          <div class="activity-title">Busy day?</div>
+          <p class="activity-desc">Even a quick 15-minute break together ticks the box. The size of the catch-up doesn't matter — the connection does.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SONDER SECTION -->
+<section style="background:var(--asphalt-mid);padding:80px 24px">
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:32px;background:rgba(84,193,175,0.08);border:2px solid rgba(84,193,175,0.3);border-radius:24px;padding:40px;">
+      <a href="https://play.google.com/store/apps/details?id=com.sonder.member.android&pcampaignid=web_share" target="_blank" style="flex-shrink:0">
+        <img src="data:image/png;base64,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" alt="Sonder" style="width:88px;height:88px;border-radius:20px;display:block;box-shadow:0 8px 24px rgba(0,0,0,0.3)">
+      </a>
+      <div>
+        <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin-bottom:10px;color:#fff">Sonder — Your 24/7 Wellbeing App</div>
+        <p style="font-size:15px;line-height:1.75;color:rgba(255,255,255,0.78);margin-bottom:16px">All Carbiz employees have 24/7 access to Sonder which is a 24/7 safety and wellbeing service, connecting you to the help you need at the touch of a button. Including mental and physical health support from our team of nurses, wellbeing experts and in-person responders.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.sonder.member.android&pcampaignid=web_share" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:var(--oceanic);color:var(--asphalt);border-radius:100px;padding:10px 24px;font-size:14px;font-weight:800;text-decoration:none">Download Sonder →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATE RESOURCES -->
+<section class="aus-map-section" id="states">
+  <div class="container">
+    <div class="map-header">
+      <div class="section-label reveal" style="justify-content:center">Support across Australia</div>
+      <h2 class="section-title reveal reveal-delay-1" style="text-align:center">Mental health resources<br><span style="color:var(--oceanic)">near you</span></h2>
+      <p class="section-body reveal reveal-delay-2" style="text-align:center;margin:0 auto;max-width:560px">
+        From Darwin to Hobart, support is available. These services welcome everyone — regardless of gender, background, or what you're going through. Click on your state to be taken to the relevant information.
+      </p>
+    </div>
+
+    <div class="australia-map-container reveal">
+      <svg class="aus-map-svg" viewBox="0 0 800 620" xmlns="http://www.w3.org/2000/svg">
+        <style>
+          .city-pin { cursor: pointer; }
+          .city-pin .pin-ripple { transition: r 0.25s ease, opacity 0.25s ease; }
+          .city-pin .pin-core { transition: r 0.25s ease, filter 0.25s ease; }
+          .city-pin:hover .pin-ripple { r: 18; opacity: 0.35; }
+          .city-pin:hover .pin-core { r: 9; filter: drop-shadow(0 0 8px #54c1af); }
+          .city-pin .pin-city-txt { transition: font-size 0.2s ease, fill 0.2s ease; }
+          .city-pin:hover .pin-city-txt { fill: #54c1af !important; }
+        </style>
+
+        <!-- Mainland Australia outline -->
+        <path d="
+          M 155,140 L 148,148 L 138,162 L 128,180 L 120,200 L 112,225 L 108,252
+          L 106,278 L 108,305 L 112,328 L 118,348 L 126,365 L 136,380 L 148,393
+          L 158,402 L 162,410 L 160,418 L 155,424 L 152,432 L 154,440 L 160,448
+          L 170,454 L 182,456 L 192,452 L 198,444 L 200,435 L 198,426 L 192,418
+          L 188,410 L 190,402 L 198,396 L 210,392 L 225,390 L 242,390 L 258,392
+          L 272,396 L 282,402 L 288,410 L 290,420 L 288,430 L 282,440 L 274,450
+          L 268,460 L 268,470 L 272,478 L 280,484 L 292,486 L 305,484 L 316,478
+          L 324,470 L 328,460 L 328,450 L 324,440 L 318,432 L 316,424 L 320,416
+          L 328,410 L 340,406 L 354,404 L 368,404 L 380,406 L 390,410 L 398,416
+          L 404,424 L 406,434 L 404,444 L 398,454 L 394,464 L 396,474 L 402,482
+          L 412,488 L 425,490 L 438,488 L 449,482 L 456,474 L 458,464 L 456,454
+          L 450,444 L 446,434 L 448,424 L 454,416 L 464,410 L 476,406 L 490,404
+          L 505,404 L 518,408 L 530,414 L 538,422 L 542,432 L 540,442 L 534,452
+          L 530,462 L 532,472 L 538,480 L 548,486 L 560,490 L 572,490 L 582,488
+          L 590,484 L 595,478 L 598,470 L 598,460 L 594,450 L 588,440 L 584,430
+          L 582,420 L 584,410 L 590,402 L 599,396 L 610,392 L 622,390 L 634,390
+          L 644,394 L 652,400 L 656,410 L 654,420 L 648,430 L 644,440 L 644,450
+          L 648,460 L 656,468 L 666,474 L 678,476 L 688,472 L 696,464 L 700,454
+          L 700,442 L 696,432 L 690,424 L 688,414 L 692,406 L 700,400 L 704,390
+          L 702,378 L 696,365 L 686,350 L 672,334 L 656,316 L 640,298 L 626,280
+          L 614,262 L 605,244 L 598,228 L 593,212 L 590,198 L 588,186 L 588,174
+          L 590,164 L 594,155 L 600,148 L 608,142 L 614,136 L 616,128 L 612,120
+          L 604,114 L 594,110 L 582,108 L 568,108 L 554,110 L 540,114 L 526,120
+          L 512,128 L 498,138 L 484,150 L 470,164 L 456,178 L 442,192 L 428,205
+          L 414,216 L 400,224 L 386,230 L 372,232 L 358,230 L 344,224 L 330,214
+          L 316,202 L 302,188 L 288,174 L 274,162 L 260,152 L 246,144 L 232,138
+          L 218,134 L 204,132 L 190,132 L 177,134 Z
+        " fill="rgba(84,193,175,0.07)" stroke="rgba(84,193,175,0.3)" stroke-width="1.5" stroke-linejoin="round"/>
+
+        <!-- Tasmania -->
+        <path d="
+          M 490,530 C 480,525 468,524 458,528 C 448,533 441,542 440,553
+          C 439,564 444,575 453,581 C 462,587 474,588 484,584
+          C 494,580 501,570 502,559 C 503,548 500,535 490,530 Z
+        " fill="rgba(84,193,175,0.07)" stroke="rgba(84,193,175,0.3)" stroke-width="1.5"/>
+
+        <!-- State label positions -->
+        <text x="195" y="300" font-family="Syne,sans-serif" font-weight="700" font-size="16" fill="rgba(84,193,175,0.45)" text-anchor="middle">WA</text>
+        <text x="370" y="240" font-family="Syne,sans-serif" font-weight="700" font-size="13" fill="rgba(84,193,175,0.45)" text-anchor="middle">NT</text>
+        <text x="370" y="430" font-family="Syne,sans-serif" font-weight="700" font-size="13" fill="rgba(84,193,175,0.45)" text-anchor="middle">SA</text>
+        <text x="560" y="260" font-family="Syne,sans-serif" font-weight="700" font-size="14" fill="rgba(84,193,175,0.45)" text-anchor="middle">QLD</text>
+        <text x="590" y="400" font-family="Syne,sans-serif" font-weight="700" font-size="12" fill="rgba(84,193,175,0.45)" text-anchor="middle">NSW</text>
+        <text x="540" y="468" font-family="Syne,sans-serif" font-weight="700" font-size="11" fill="rgba(84,193,175,0.45)" text-anchor="middle">VIC</text>
+        <text x="471" y="560" font-family="Syne,sans-serif" font-weight="700" font-size="10" fill="rgba(84,193,175,0.45)" text-anchor="middle">TAS</text>
+        <text x="614" y="422" font-family="Syne,sans-serif" font-weight="700" font-size="7.5" fill="rgba(84,193,175,0.55)" text-anchor="middle">ACT</text>
+
+        <!-- Perth / WA -->
+        <g class="city-pin" onclick="scrollToState('wa')" role="link" aria-label="WA">
+          <circle class="pin-ripple" cx="148" cy="395" r="12" fill="#54c1af" opacity="0.18"/>
+          <circle class="pin-core" cx="148" cy="395" r="6" fill="#54c1af" opacity="0.9"/>
+          <text class="pin-city-txt" x="134" y="390" font-family="Open Sans,sans-serif" font-size="9" font-weight="600" fill="rgba(255,255,255,0.55)" text-anchor="end">Perth</text>
+        </g>
+        <!-- Darwin / NT -->
+        <g class="city-pin" onclick="scrollToState('nt')" role="link" aria-label="NT">
+          <circle class="pin-ripple" cx="388" cy="148" r="12" fill="#54c1af" opacity="0.18"/>
+          <circle class="pin-core" cx="388" cy="148" r="6" fill="#54c1af" opacity="0.9"/>
+          <text class="pin-city-txt" x="402" y="143" font-family="Open Sans,sans-serif" font-size="9" font-weight="600" fill="rgba(255,255,255,0.55)">Darwin</text>
+        </g>
+        <!-- Adelaide / SA -->
+        <g class="city-pin" onclick="scrollToState('sa')" role="link" aria-label="SA">
+          <circle class="pin-ripple" cx="400" cy="455" r="12" fill="#54c1af" opacity="0.18"/>
+          <circle class="pin-core" cx="400" cy="455" r="6" fill="#54c1af" opacity="0.9"/>
+          <text class="pin-city-txt" x="386" y="450" font-family="Open Sans,sans-serif" font-size="9" font-weight="600" fill="rgba(255,255,255,0.55)" text-anchor="end">Adelaide</text>
+        </g>
+        <!-- Brisbane / QLD -->
+        <g class="city-pin" onclick="scrollToState('qld')" role="link" aria-label="QLD">
+          <circle class="pin-ripple" cx="642" cy="335" r="12" fill="#54c1af" opacity="0.18"/>
+          <circle class="pin-core" cx="642" cy="335" r="6" fill="#54c1af" opacity="0.9"/>
+          <text class="pin-city-txt" x="656" y="330" font-family="Open Sans,sans-serif" font-size="9" font-weight="600" fill="rgba(255,255,255,0.55)">Brisbane</text>
+        </g>
+        <!-- Sydney / NSW -->
+        <g class="city-pin" onclick="scrollToState('nsw')" role="link" aria-label="NSW">
+          <circle class="pin-ripple" cx="636" cy="390" r="12" fill="#54c1af" opacity="0.18"/>
+          <circle class="pin-core" cx="636" cy="390" r="6" fill="#54c1af" opacity="0.9"/>
+          <text class="pin-city-txt" x="650" y="385" font-family="Open Sans,sans-serif" font-size="9" font-weight="600" fill="rgba(255,255,255,0.55)">Sydney</text>
+        </g>
+        <!-- Melbourne / VIC -->
+        <g class="city-pin" onclick="scrollToState('vic')" role="link" aria-label="VIC">
+          <circle class="pin-ripple" cx="568" cy="462" r="12" fill="#54c1af" opacity="0.18"/>
+          <circle class="pin-core" cx="568" cy="462" r="6" fill="#54c1af" opacity="0.9"/>
+          <text class="pin-city-txt" x="582" y="457" font-family="Open Sans,sans-serif" font-size="9" font-weight="600" fill="rgba(255,255,255,0.55)">Melbourne</text>
+        </g>
+        <!-- Hobart / TAS -->
+        <g class="city-pin" onclick="scrollToState('tas')" role="link" aria-label="TAS">
+          <circle class="pin-ripple" cx="471" cy="555" r="11" fill="#54c1af" opacity="0.18"/>
+          <circle class="pin-core" cx="471" cy="555" r="5" fill="#54c1af" opacity="0.9"/>
+          <text class="pin-city-txt" x="485" y="550" font-family="Open Sans,sans-serif" font-size="9" font-weight="600" fill="rgba(255,255,255,0.55)">Hobart</text>
+        </g>
+        <!-- Canberra / ACT -->
+        <g class="city-pin" onclick="scrollToState('act')" role="link" aria-label="ACT">
+          <circle class="pin-ripple" cx="610" cy="420" r="10" fill="#54c1af" opacity="0.18"/>
+          <circle class="pin-core" cx="610" cy="420" r="5" fill="#54c1af" opacity="0.9"/>
+          <text class="pin-city-txt" x="624" y="416" font-family="Open Sans,sans-serif" font-size="8" font-weight="600" fill="rgba(255,255,255,0.55)">Canberra</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="states-grid">
+      <div class="state-card reveal" id="state-nsw">
+        <div class="state-header"><div class="state-abbr">NSW</div></div>
+        <div class="state-links">
+          <a href="https://www.headspace.org.au/headspace-centres/sydney/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">Youth (12–25)</span>headspace Sydney</div></a>
+          <a href="https://www.blackdoginstitute.org.au/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">Research & support</span>Black Dog Institute</div></a>
+          <a href="https://www.mhcs.org.au/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">Community</span>Mental Health Community Support</div></a>
+          <a href="https://www.wellways.org/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">All genders</span>Wellways Australia</div></a>
+          <a href="https://www.1800respect.org.au/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">All genders</span>1800RESPECT — 1800 737 732</div></a>
+        </div>
+      </div>
+      <div class="state-card reveal reveal-delay-1" id="state-vic">
+        <div class="state-header"><div class="state-abbr">VIC</div></div>
+        <div class="state-links">
+          <a href="https://www.orygen.org.au/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">Youth</span>Orygen Youth Health</div></a>
+          <a href="https://www.mindaustralia.org.au/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">Recovery</span>Mind Australia</div></a>
+          <a href="https://www.headtohealth.gov.au/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">Digital & in-person</span>Head to Health Melbourne</div></a>
+          <a href="https://www.betterplace.org.au/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">Women & families</span>Better Place Australia</div></a>
+          <a href="https://www.sane.org/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">Complex mental health</span>SANE Australia</div></a>
+        </div>
+      </div>
+      <div class="state-card reveal reveal-delay-2" id="state-qld">
+        <div class="state-header"><div class="state-abbr">QLD</div></div>
+        <div class="state-links">
+          <a href="https://mentalhealth.org.au/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">Community</span>Mental Health Assoc. QLD</div></a>
+          <a href="https://www.headspace.org.au/headspace-centres/brisbane/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">Youth (12–25)</span>headspace Brisbane</div></a>
+          <a href="https://www.micah.org.au/services/mental-health" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">All genders</span>Micah Projects Mental Health</div></a>
+          <a href="https://www.dvconnect.org/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">Crisis</span>DVConnect — 1800 811 811</div></a>
+          <a href="https://www.lifeline.org.au/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">24/7 Crisis</span>Lifeline — 13 11 14</div></a>
+        </div>
+      </div>
+      <div class="state-card reveal reveal-delay-3" id="state-wa">
+        <div class="state-header"><div class="state-abbr">WA</div></div>
+        <div class="state-links">
+          <a href="https://www.mentalhealth.wa.gov.au/getting-help/MHEmergencyResponse" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">Crisis line</span>MH Emergency — 1800 676 822</div></a>
+          <a href="https://rurallink.org.au/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">Rural & remote</span>Rural Link — 1800 552 002</div></a>
+          <a href="https://www.beyondblue.org.au/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">All genders</span>Beyond Blue</div></a>
+          <a href="https://www.perinatal.org.au/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">New parents</span>PANDA — Perinatal Anxiety</div></a>
+          <a href="https://www.headspace.org.au/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">Youth</span>headspace WA</div></a>
+        </div>
+      </div>
+      <div class="state-card reveal" id="state-sa">
+        <div class="state-header"><div class="state-abbr">SA</div></div>
+        <div class="state-links">
+          <a href="https://www.mhcsa.org.au/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">Peak body</span>Mental Health Coalition of SA</div></a>
+          <a href="https://accesssa.com.au/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">Crisis & support</span>ACCESS — 13 14 65</div></a>
+          <a href="https://www.headspace.org.au/headspace-centres/adelaide/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">Youth</span>headspace Adelaide</div></a>
+          <a href="https://www.uniting.org/services/mental-health-sa" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">All genders</span>Uniting SA Mental Health</div></a>
+          <a href="https://www.equalitysa.org.au/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">LGBTQIA+</span>Equality SA</div></a>
+        </div>
+      </div>
+      <div class="state-card reveal reveal-delay-1" id="state-tas">
+        <div class="state-header"><div class="state-abbr">TAS</div></div>
+        <div class="state-links">
+          <a href="https://www.mentalhealthtas.org.au/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">Peak body</span>Mental Health Tasmania</div></a>
+          <a href="https://www.headspace.org.au/headspace-centres/hobart/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">Youth</span>headspace Hobart</div></a>
+          <a href="https://www.anglicaretas.org.au/services/mental-health/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">Community</span>Anglicare Tasmania</div></a>
+          <a href="https://www.tasmanianwomenscouncil.com/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">Women</span>Tasmanian Women's Council</div></a>
+          <a href="https://www.lifeline.org.au/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">24/7 Crisis</span>Lifeline — 13 11 14</div></a>
+        </div>
+      </div>
+      <div class="state-card reveal reveal-delay-2" id="state-nt">
+        <div class="state-header"><div class="state-abbr">NT</div></div>
+        <div class="state-links">
+          <a href="https://www.ntmentalhealth.org.au/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">Peak body</span>Mental Health Assoc. NT</div></a>
+          <a href="https://headtohealth.gov.au/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">Digital</span>Head to Health</div></a>
+          <a href="https://www.beyondblue.org.au/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">All genders</span>Beyond Blue</div></a>
+          <a href="https://www.1800respect.org.au/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">All genders</span>1800RESPECT — 1800 737 732</div></a>
+          <a href="https://www.lifeline.org.au/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">24/7 Crisis</span>Lifeline — 13 11 14</div></a>
+        </div>
+      </div>
+      <div class="state-card reveal reveal-delay-3" id="state-act">
+        <div class="state-header"><div class="state-abbr">ACT</div></div>
+        <div class="state-links">
+          <a href="https://www.headspace.org.au/headspace-centres/canberra/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">Youth</span>headspace Canberra</div></a>
+          <a href="https://www.crisisact.org.au/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">Crisis</span>Crisis Assessment & Treatment</div></a>
+          <a href="https://www.ywca-canberra.org.au/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">Women & gender diverse</span>YWCA Canberra</div></a>
+          <a href="https://www.carersact.org.au/services/mental-health" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">Carers</span>Carers ACT Mental Health</div></a>
+          <a href="https://www.lifeline.org.au/" target="_blank" class="state-link"><div class="link-dot"></div><div><span class="link-type">24/7 Crisis</span>Lifeline — 13 11 14</div></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NATIONAL RESOURCES -->
+<section class="national-section" id="resources">
+  <div class="container">
+    <div class="section-label reveal">Nationwide</div>
+    <h2 class="section-title reveal reveal-delay-1">National support,<br><span style="color:var(--oceanic)">for everyone</span></h2>
+    <p class="section-body reveal reveal-delay-2">These services are available to all Australians, 24/7, for free. You don't need a reason — just reach out.</p>
+    <div class="crisis-bar reveal reveal-delay-3" style="margin-top:32px">
+      If someone's life is at immediate risk, call <strong>000</strong> &nbsp;|&nbsp;
+      <a href="tel:131114">Lifeline 13 11 14</a> &nbsp;|&nbsp;
+      <a href="tel:1300659467">Suicide Callback 1300 659 467</a>
+    </div>
+    <div class="national-grid">
+      <a href="https://www.lifeline.org.au/" target="_blank" class="national-card reveal">
+        <span class="national-card-tag tag-crisis">24/7 Crisis</span>
+        <div class="national-card-name">Lifeline Australia</div>
+        <p class="national-card-desc">24/7 crisis support and suicide prevention for all Australians, regardless of gender or background.</p>
+        <div class="national-card-number">13 11 14</div>
+        <div class="national-card-link">lifeline.org.au →</div>
+      </a>
+      <a href="https://www.beyondblue.org.au/" target="_blank" class="national-card reveal reveal-delay-1">
+        <span class="national-card-tag tag-mental">Mental Health</span>
+        <div class="national-card-name">Beyond Blue</div>
+        <p class="national-card-desc">Support for anxiety, depression and suicide prevention. Open to anyone — all genders, all ages.</p>
+        <div class="national-card-number">1300 22 4636</div>
+        <div class="national-card-link">beyondblue.org.au →</div>
+      </a>
+      <a href="https://headspace.org.au/" target="_blank" class="national-card reveal reveal-delay-2">
+        <span class="national-card-tag tag-youth">Youth (12–25)</span>
+        <div class="national-card-name">headspace</div>
+        <p class="national-card-desc">Mental health support for young Australians. Online, phone, and in-person centres across every state.</p>
+        <div class="national-card-number">1800 650 890</div>
+        <div class="national-card-link">headspace.org.au →</div>
+      </a>
+      <a href="https://www.1800respect.org.au/" target="_blank" class="national-card reveal reveal-delay-3">
+        <span class="national-card-tag tag-women">All Genders Welcome</span>
+        <div class="national-card-name">1800RESPECT</div>
+        <p class="national-card-desc">National sexual assault, domestic and family violence counselling for anyone experiencing or at risk.</p>
+        <div class="national-card-number">1800 737 732</div>
+        <div class="national-card-link">1800respect.org.au →</div>
+      </a>
+      <a href="https://www.kidshelpline.com.au/" target="_blank" class="national-card reveal">
+        <span class="national-card-tag tag-youth">Youth (5–25)</span>
+        <div class="national-card-name">Kids Helpline</div>
+        <p class="national-card-desc">Free, private and confidential 24/7 counselling for young people aged 5–25. Phone, chat and email.</p>
+        <div class="national-card-number">1800 55 1800</div>
+        <div class="national-card-link">kidshelpline.com.au →</div>
+      </a>
+      <a href="https://www.suicidecallbackservice.org.au/" target="_blank" class="national-card reveal reveal-delay-1">
+        <span class="national-card-tag tag-crisis">Crisis Support</span>
+        <div class="national-card-name">Suicide Callback Service</div>
+        <p class="national-card-desc">Professional counselling for people affected by suicide. Free and available to anyone in Australia.</p>
+        <div class="national-card-number">1300 659 467</div>
+        <div class="national-card-link">suicidecallbackservice.org.au →</div>
+      </a>
+      <a href="https://www.perinatal.org.au/" target="_blank" class="national-card reveal reveal-delay-2">
+        <span class="national-card-tag tag-women">New Parents</span>
+        <div class="national-card-name">PANDA</div>
+        <p class="national-card-desc">Supporting women, men and families during pregnancy and early parenthood with anxiety and depression.</p>
+        <div class="national-card-number">1300 726 306</div>
+        <div class="national-card-link">panda.org.au →</div>
+      </a>
+      <a href="https://www.sane.org/" target="_blank" class="national-card reveal reveal-delay-3">
+        <span class="national-card-tag tag-mental">Complex Mental Health</span>
+        <div class="national-card-name">SANE Australia</div>
+        <p class="national-card-desc">Supporting people living with complex mental health issues and those who care for them. Free counselling.</p>
+        <div class="national-card-number">1800 18 7263</div>
+        <div class="national-card-link">sane.org →</div>
+      </a>
+      <a href="https://conversations.movember.com/" target="_blank" class="national-card reveal">
+        <span class="national-card-tag tag-connect">Connection Tool</span>
+        <div class="national-card-name">Movember Conversations</div>
+        <p class="national-card-desc">A free interactive tool guiding you through tricky conversations — job loss, isolation, grief, family pressure.</p>
+        <div class="national-card-link" style="margin-top:16px">conversations.movember.com →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="cta-inner">
+    <div class="section-label">This May 8</div>
+    <h2 class="section-title">One text.<br>Infinite impact.</h2>
+    <p>You don't need the perfect words. Just send something. A check-in, a meme, a "hey, been thinking about you." It all counts. Let's look out for each other.</p>
+    <a href="https://au.movember.com/mens-health/mayeight" target="_blank" class="btn-dark">Learn more at Movember →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <img src="carbiz-logo.png" alt="Carbiz" style="height:30px;filter:brightness(0) invert(1)" onerror="this.style.display='none'">
+    <p class="footer-text">Carbiz Mate's Day initiative — May 8. If someone is in immediate danger, call <strong style="color:var(--coral)">000</strong>.</p>
+    <p class="footer-text" style="font-size:12px;color:rgba(255,255,255,0.22)">MAYEIGHT is a Movember initiative. Carbiz proudly supports mental health awareness for everyone.</p>
+  </div>
+</footer>
+
+<script>
+  // Map dot → scroll to state card
+  function scrollToState(stateKey) {
+    const el = document.getElementById('state-' + stateKey);
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // flash highlight
+    el.style.transition = 'box-shadow 0.15s ease, border-color 0.15s ease';
+    el.style.boxShadow = '0 0 0 3px #54c1af, 0 0 32px rgba(84,193,175,0.5)';
+    el.style.borderColor = '#54c1af';
+    setTimeout(() => {
+      el.style.boxShadow = '';
+      el.style.borderColor = '';
+    }, 1800);
+  }
+
+  // Meat pie floaters 🥧
+  const pieBg = document.getElementById('pieBg');
+  const icons = ['🥧','🥧','🥧','🥧','🥧','🥧'];
+  for (let i = 0; i < 24; i++) {
+    const el = document.createElement('div');
+    el.className = 'pie-float';
+    el.textContent = icons[Math.floor(Math.random() * icons.length)];
+    const size = Math.random() * 16 + 20;
+    el.style.cssText = `font-size:${size}px;left:${Math.random()*100}%;top:${Math.random()*100}%;animation-duration:${Math.random()*14+10}s;animation-delay:${Math.random()*14}s;`;
+    pieBg.appendChild(el);
+  }
+
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
