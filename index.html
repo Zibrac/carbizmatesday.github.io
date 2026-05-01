@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mate's Day — May 8 | Carbiz</title>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
     --oceanic: #54c1af;
@@ -22,7 +22,6 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { font-family: 'Open Sans', sans-serif; background: var(--asphalt); color: var(--white); overflow-x: hidden; }
-  h1, h2, h3, .section-title, .step-title, .activity-title, .stat-number, .national-card-name, .state-abbr { font-family: 'Open Sans', sans-serif !important; }
 
   /* NAV */
   nav {
@@ -32,7 +31,6 @@
     border-bottom: 1px solid rgba(84,193,175,0.15);
   }
   .nav-logo { display: flex; align-items: center; text-decoration: none; }
-  .nav-logo img { height: 34px; display: block; filter: brightness(0) invert(1); }
   .nav-links { display: flex; gap: 32px; list-style: none; }
   .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; font-weight: 600; letter-spacing: 0.3px; transition: color 0.2s; }
   .nav-links a:hover { color: var(--oceanic); }
@@ -50,11 +48,7 @@
       var(--asphalt);
   }
   .pie-bg { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
-  .pie-float {
-    position: absolute; opacity: 0;
-    animation: floatPie linear infinite;
-    user-select: none; line-height: 1;
-  }
+  .pie-float { position: absolute; opacity: 0; animation: floatPie linear infinite; user-select: none; line-height: 1; }
   @keyframes floatPie {
     0%   { transform: translateY(0) rotate(-5deg) scale(0.85); opacity: 0; }
     8%   { opacity: 0.38; }
@@ -70,22 +64,10 @@
   }
   .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--oceanic); animation: pulse 2s infinite; }
   @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.5); } }
-  .hero h1 {
-    position: relative; font-family: 'Open Sans', sans-serif;
-    font-size: clamp(60px, 9vw, 114px); font-weight: 800; line-height: 0.93;
-    letter-spacing: -3px; margin-bottom: 14px; animation: fadeUp 0.8s ease 0.1s both;
-  }
+  .hero h1 { position: relative; font-family: 'Open Sans', sans-serif; font-size: clamp(60px, 9vw, 114px); font-weight: 800; line-height: 0.93; letter-spacing: -3px; margin-bottom: 14px; animation: fadeUp 0.8s ease 0.1s both; }
   .hero h1 .may { color: var(--oceanic); }
-  .hero-date {
-    position: relative; font-family: 'Syne', sans-serif;
-    font-size: clamp(14px, 2.2vw, 22px); font-weight: 700;
-    color: rgba(255,255,255,0.65); letter-spacing: 4px; text-transform: uppercase;
-    margin-bottom: 32px; animation: fadeUp 0.8s ease 0.2s both;
-  }
-  .hero-desc {
-    position: relative; max-width: 620px; font-size: 18px; line-height: 1.75;
-    color: rgba(255,255,255,0.82); margin-bottom: 48px; animation: fadeUp 0.8s ease 0.3s both;
-  }
+  .hero-date { position: relative; font-family: 'Open Sans', sans-serif; font-size: clamp(14px, 2.2vw, 22px); font-weight: 700; color: rgba(255,255,255,0.65); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 32px; animation: fadeUp 0.8s ease 0.2s both; }
+  .hero-desc { position: relative; max-width: 620px; font-size: 18px; line-height: 1.75; color: rgba(255,255,255,0.82); margin-bottom: 48px; animation: fadeUp 0.8s ease 0.3s both; }
   .hero-ctas { position: relative; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; animation: fadeUp 0.8s ease 0.4s both; }
   .btn-primary { background: var(--oceanic); color: var(--asphalt); padding: 16px 36px; border-radius: 100px; font-weight: 800; font-size: 15px; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
   .btn-primary:hover { background: #3db8a6; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(84,193,175,0.4); }
@@ -115,7 +97,7 @@
   .stat-block:nth-child(2) { border-top: 3px solid var(--coral); }
   .stat-block:nth-child(3) { border-top: 3px solid var(--pool); }
   .stat-block:nth-child(4) { border-top: 3px solid var(--lemon); }
-  .stat-number { font-family: 'Syne', sans-serif; font-size: 44px; font-weight: 800; line-height: 1; margin-bottom: 8px; }
+  .stat-number { font-family: 'Open Sans', sans-serif; font-size: 44px; font-weight: 800; line-height: 1; margin-bottom: 8px; }
   .stat-block:nth-child(1) .stat-number { color: var(--oceanic); }
   .stat-block:nth-child(2) .stat-number { color: var(--coral); }
   .stat-block:nth-child(3) .stat-number { color: var(--pool); }
@@ -127,63 +109,33 @@
   .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
   .step-card { position: relative; background: var(--asphalt-mid); border: 1px solid rgba(84,193,175,0.1); border-radius: 20px; padding: 40px 32px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; }
   .step-card:hover { transform: translateY(-4px); border-color: rgba(84,193,175,0.3); }
-  .step-number { font-family: 'Syne', sans-serif; font-size: 80px; font-weight: 800; line-height: 1; color: rgba(84,193,175,0.08); position: absolute; top: 16px; right: 24px; letter-spacing: -4px; }
+  .step-number { font-family: 'Open Sans', sans-serif; font-size: 80px; font-weight: 800; line-height: 1; color: rgba(84,193,175,0.08); position: absolute; top: 16px; right: 24px; letter-spacing: -4px; }
   .step-icon { width: 52px; height: 52px; background: rgba(84,193,175,0.12); border: 1px solid rgba(84,193,175,0.25); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 24px; }
-  .step-title { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 700; margin-bottom: 12px; }
+  .step-title { font-family: 'Open Sans', sans-serif; font-size: 24px; font-weight: 700; margin-bottom: 12px; }
   .step-desc { font-size: 15px; line-height: 1.7; color: rgba(255,255,255,0.65); }
 
   /* CARBIZ DAY */
-  .day-section {
-    background: linear-gradient(135deg, var(--oceanic-deep) 0%, var(--asphalt-mid) 55%, var(--asphalt) 100%);
-    position: relative; overflow: hidden;
-  }
-  .day-section::before {
-    content: ''; position: absolute; top: -180px; right: -180px; width: 550px; height: 550px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(84,193,175,0.18) 0%, transparent 65%); pointer-events: none;
-  }
-  .day-section::after {
-    content: ''; position: absolute; bottom: -100px; left: -100px; width: 380px; height: 380px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(84,193,175,0.1) 0%, transparent 65%); pointer-events: none;
-  }
+  .day-section { background: linear-gradient(135deg, var(--oceanic-deep) 0%, var(--asphalt-mid) 55%, var(--asphalt) 100%); position: relative; overflow: hidden; }
+  .day-section::before { content: ''; position: absolute; top: -180px; right: -180px; width: 550px; height: 550px; border-radius: 50%; background: radial-gradient(circle, rgba(84,193,175,0.18) 0%, transparent 65%); pointer-events: none; }
+  .day-section::after { content: ''; position: absolute; bottom: -100px; left: -100px; width: 380px; height: 380px; border-radius: 50%; background: radial-gradient(circle, rgba(84,193,175,0.1) 0%, transparent 65%); pointer-events: none; }
   .day-header { text-align: center; margin-bottom: 56px; }
   .activity-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 60px; }
-  .activity-card {
-    background: rgba(255,255,255,0.06); border: 1px solid rgba(84,193,175,0.2);
-    border-radius: 20px; padding: 32px 20px; text-align: center;
-    transition: transform 0.2s, background 0.2s; position: relative; overflow: hidden;
-  }
+  .activity-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(84,193,175,0.2); border-radius: 20px; padding: 32px 20px; text-align: center; transition: transform 0.2s, background 0.2s; position: relative; overflow: hidden; }
   .activity-card:hover { transform: translateY(-4px); background: rgba(84,193,175,0.1); }
-  .activity-card::before {
-    content: attr(data-step); position: absolute; top: 14px; left: 16px;
-    font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 800;
-    letter-spacing: 2px; color: rgba(84,193,175,0.45);
-  }
+  .activity-card::before { content: attr(data-step); position: absolute; top: 14px; left: 16px; font-family: 'Open Sans', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 2px; color: rgba(84,193,175,0.45); }
   .activity-emoji { font-size: 44px; margin-bottom: 16px; display: block; line-height: 1; }
-  .activity-title { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+  .activity-title { font-family: 'Open Sans', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 10px; }
   .activity-desc { font-size: 13px; line-height: 1.65; color: rgba(255,255,255,0.65); }
 
-  /* map embed */
-  .map-embed-wrapper { position: relative; border-radius: 20px; overflow: hidden; border: 2px solid rgba(84,193,175,0.25); box-shadow: 0 24px 64px rgba(0,0,0,0.35); }
-  .map-embed-header { background: rgba(84,193,175,0.12); border-bottom: 1px solid rgba(84,193,175,0.2); padding: 16px 24px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
-  .map-route-badge { background: var(--oceanic); color: var(--asphalt); font-size: 11px; font-weight: 800; letter-spacing: 1.5px; padding: 5px 12px; border-radius: 100px; text-transform: uppercase; white-space: nowrap; }
-  .map-route-desc { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.8); }
-  .map-route-desc span { color: var(--oceanic); font-weight: 700; }
-  .map-embed-wrapper iframe { display: block; width: 100%; height: 420px; border: none; }
-  .map-footer-note { background: rgba(0,0,0,0.2); padding: 14px 24px; font-size: 12px; color: rgba(255,255,255,0.5); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-
-  /* AUS MAP */
+  /* STATE CARDS */
   .aus-map-section { background: var(--asphalt); position: relative; overflow: hidden; }
   .aus-map-section::before { content: ''; position: absolute; top: -200px; right: -200px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(84,193,175,0.06) 0%, transparent 70%); pointer-events: none; }
   .map-header { text-align: center; margin-bottom: 60px; }
-  .australia-map-container { max-width: 780px; margin: 0 auto 64px; }
-  .aus-map-svg { width: 100%; filter: drop-shadow(0 0 40px rgba(84,193,175,0.1)); }
-
-  /* STATE CARDS */
   .states-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
   .state-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(84,193,175,0.12); border-radius: 16px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; }
   .state-card:hover { transform: translateY(-3px); border-color: rgba(84,193,175,0.28); }
   .state-header { background: rgba(84,193,175,0.1); border-bottom: 1px solid rgba(84,193,175,0.15); padding: 14px 20px; }
-  .state-abbr { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; color: var(--oceanic); }
+  .state-abbr { font-family: 'Open Sans', sans-serif; font-size: 20px; font-weight: 800; color: var(--oceanic); }
   .state-links { padding: 14px 18px; display: flex; flex-direction: column; gap: 6px; }
   .state-link { display: flex; align-items: flex-start; gap: 10px; text-decoration: none; color: rgba(255,255,255,0.75); font-size: 13px; font-weight: 600; line-height: 1.4; padding: 7px 8px; border-radius: 8px; transition: background 0.15s, color 0.15s; }
   .state-link:hover { background: rgba(84,193,175,0.1); color: var(--oceanic); }
@@ -201,9 +153,9 @@
   .tag-women   { background: rgba(247,156,99,0.15);  color: var(--sunset); }
   .tag-youth   { background: rgba(94,140,244,0.15);  color: var(--pool); }
   .tag-connect { background: rgba(254,230,154,0.15); color: var(--lemon); }
-  .national-card-name { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+  .national-card-name { font-family: 'Open Sans', sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 8px; }
   .national-card-desc { font-size: 13px; line-height: 1.6; color: rgba(255,255,255,0.55); margin-bottom: 16px; }
-  .national-card-number { font-size: 18px; font-weight: 800; color: var(--oceanic); font-family: 'Syne', sans-serif; }
+  .national-card-number { font-size: 18px; font-weight: 800; color: var(--oceanic); }
   .national-card-link { font-size: 13px; color: var(--oceanic); font-weight: 600; margin-top: 8px; }
 
   /* CTA */
@@ -274,24 +226,14 @@
 <!-- HERO -->
 <section class="hero">
   <div class="pie-bg" id="pieBg"></div>
-
-  <div class="hero-eyebrow">
-    <div class="pulse"></div>
-    Thursday, 8 May 2025
-  </div>
-
+  <div class="hero-eyebrow"><div class="pulse"></div>Thursday, 8 May 2025</div>
   <h1><span class="may">MAY</span><br>EIGHT</h1>
   <div class="hero-date">Australia's Day of Mateship</div>
-
-  <p class="hero-desc">
-    Your reminder to reconnect — because the most powerful thing you can do for someone's mental health is simply show up. For everyone. No exceptions.
-  </p>
-
+  <p class="hero-desc">Your reminder to reconnect — because the most powerful thing you can do for someone's mental health is simply show up. For everyone. No exceptions.</p>
   <div class="hero-ctas">
     <a href="#our-day" class="btn-primary">What we're doing →</a>
     <a href="#states" class="btn-secondary">Find support near you</a>
   </div>
-
   <div class="scroll-indicator">
     <span>Scroll</span>
     <svg class="scroll-chevron" width="16" height="10" viewBox="0 0 16 10" fill="none">
@@ -307,12 +249,8 @@
       <div>
         <div class="section-label reveal">What is Mate's Day</div>
         <h2 class="section-title reveal reveal-delay-1">Connection<br>saves lives.</h2>
-        <p class="section-body reveal reveal-delay-2" style="margin-bottom:20px">
-          MAYEIGHT is Movember's official day of mateship, held each year on May 8. It's a day to reconnect with someone you haven't caught up with in a while — a mate, a colleague, a sibling, a neighbour.
-        </p>
-        <p class="section-body reveal reveal-delay-3">
-          But loneliness doesn't discriminate. One in four Australians experience it at some point, and 25% of young Australians aged 15–24 report persistent loneliness. Whether you identify as male, female, or non-binary — reaching out matters. <strong style="color:var(--oceanic)">For everyone.</strong>
-        </p>
+        <p class="section-body reveal reveal-delay-2" style="margin-bottom:20px">MAYEIGHT is Movember's official day of mateship, held each year on May 8. It's a day to reconnect with someone you haven't caught up with in a while — a mate, a colleague, a sibling, a neighbour.</p>
+        <p class="section-body reveal reveal-delay-3">But loneliness doesn't discriminate. One in four Australians experience it at some point, and 25% of young Australians aged 15–24 report persistent loneliness. Whether you identify as male, female, or non-binary — reaching out matters. <strong style="color:var(--oceanic)">For everyone.</strong></p>
       </div>
       <div class="stat-blocks reveal reveal-delay-2">
         <div class="stat-block"><div class="stat-number">1 in 4</div><div class="stat-label">Australians experience loneliness at some point in their lives</div></div>
@@ -321,16 +259,6 @@
         <div class="stat-block"><div class="stat-number">45%</div><div class="stat-label">of Australians will experience a mental health condition in their lifetime</div></div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- PIE QUIZ -->
-<section style="background:var(--asphalt);padding:80px 24px">
-  <div class="container" style="text-align:center">
-    <div class="section-label reveal" style="justify-content:center">Just for fun</div>
-    <h2 class="section-title reveal reveal-delay-1">Pie Quiz 🥧</h2>
-    <p class="section-body reveal reveal-delay-2" style="margin:0 auto 32px;text-align:center">What type of pie are you? Take the fun, quick quiz here.</p>
-    <a href="https://carbiz.typeform.com/piequiz26" target="_blank" class="btn-primary reveal reveal-delay-3">Take the test</a>
   </div>
 </section>
 
@@ -364,13 +292,23 @@
   </div>
 </section>
 
+<!-- PIE QUIZ -->
+<section style="background:var(--asphalt);padding:80px 24px">
+  <div class="container" style="text-align:center">
+    <div class="section-label reveal" style="justify-content:center">Just for fun</div>
+    <h2 class="section-title reveal reveal-delay-1">Pie Quiz 🥧</h2>
+    <p class="section-body reveal reveal-delay-2" style="margin:0 auto 32px;text-align:center">What type of pie are you? Take the fun, quick quiz here.</p>
+    <a href="https://carbiz.typeform.com/piequiz26" target="_blank" class="btn-primary reveal reveal-delay-3">Take the test</a>
+  </div>
+</section>
+
 <!-- WHAT CARBIZ IS DOING -->
 <section class="day-section" id="our-day">
   <div class="container" style="position:relative;z-index:1">
     <div class="day-header">
       <div class="section-label reveal" style="justify-content:center">What we're doing</div>
       <h2 class="section-title reveal reveal-delay-1" style="text-align:center">Carbiz Mate's Day<br><span style="color:var(--oceanic)">May 8 at Mascot</span></h2>
-              <p class="section-body reveal reveal-delay-2" style="text-align:center;margin:0 auto;max-width:560px">
+      <p class="section-body reveal reveal-delay-2" style="text-align:center;margin:0 auto;max-width:560px">
         This Mate's Day, if you're in the office, you'll receive your free lunch voucher in the morning. It's only valid for Friday 8th May and can be used for a pie (your choice) or a sausage roll.
       </p>
       <p class="reveal reveal-delay-3" style="text-align:center;margin:12px auto 0;max-width:500px;font-size:13px;font-style:italic;color:rgba(255,255,255,0.5)">
@@ -439,7 +377,7 @@
         <img src="data:image/png;base64,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" alt="Sonder" style="width:88px;height:88px;border-radius:20px;display:block;box-shadow:0 8px 24px rgba(0,0,0,0.3)">
       </a>
       <div>
-        <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin-bottom:10px;color:#fff">Sonder — Your 24/7 Wellbeing App</div>
+        <div style="font-family:'Open Sans',sans-serif;font-size:22px;font-weight:800;margin-bottom:10px;color:#fff">Sonder — Your 24/7 Wellbeing App</div>
         <p style="font-size:15px;line-height:1.75;color:rgba(255,255,255,0.78);margin-bottom:16px">All Carbiz employees have 24/7 access to Sonder which is a 24/7 safety and wellbeing service, connecting you to the help you need at the touch of a button. Including mental and physical health support from our team of nurses, wellbeing experts and in-person responders.</p>
         <a href="https://play.google.com/store/apps/details?id=com.sonder.member.android&pcampaignid=web_share" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:var(--oceanic);color:var(--asphalt);border-radius:100px;padding:10px 24px;font-size:14px;font-weight:800;text-decoration:none">Download Sonder →</a>
       </div>
@@ -458,218 +396,7 @@
       </p>
     </div>
 
-      <div class="australia-map-container reveal" style="max-width:780px;margin:0 auto 64px;position:relative">
-        <img src="https://e7.pngegg.com/pngimages/411/792/png-clipart-australia-map-drawing-australia-white-text.png" alt="Map of Australia" style="width:100%;filter:invert(1) sepia(1) hue-rotate(130deg) saturate(1.5) brightness(0.55) opacity(0.85);">
-        <!-- City dot overlays -->
-        <svg style="position:absolute;top:0;left:0;width:100%;height:100%" viewBox="0 0 780 580" xmlns="http://www.w3.org/2000/svg">
-          <style>
-            .city-pin { cursor: pointer; }
-            .city-pin circle { transition: r 0.2s, opacity 0.2s; }
-            .city-pin:hover .pin-ripple { r: 18; opacity: 0.35; }
-            .city-pin:hover .pin-core { r: 9; filter: drop-shadow(0 0 8px #54c1af); }
-            .city-pin:hover text { fill: #54c1af !important; }
-          </style>
-          <!-- Perth -->
-          <g class="city-pin" onclick="scrollToState('wa')">
-            <circle class="pin-ripple" cx="118" cy="370" r="12" fill="#54c1af" opacity="0.2"/>
-            <circle class="pin-core" cx="118" cy="370" r="6" fill="#54c1af" opacity="0.95"/>
-            <text x="104" y="366" font-family="Open Sans,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.85)" text-anchor="end">Perth</text>
-          </g>
-          <!-- Darwin -->
-          <g class="city-pin" onclick="scrollToState('nt')">
-            <circle class="pin-ripple" cx="355" cy="82" r="12" fill="#54c1af" opacity="0.2"/>
-            <circle class="pin-core" cx="355" cy="82" r="6" fill="#54c1af" opacity="0.95"/>
-            <text x="369" y="78" font-family="Open Sans,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.85)">Darwin</text>
-          </g>
-          <!-- Adelaide -->
-          <g class="city-pin" onclick="scrollToState('sa')">
-            <circle class="pin-ripple" cx="418" cy="420" r="12" fill="#54c1af" opacity="0.2"/>
-            <circle class="pin-core" cx="418" cy="420" r="6" fill="#54c1af" opacity="0.95"/>
-            <text x="404" y="416" font-family="Open Sans,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.85)" text-anchor="end">Adelaide</text>
-          </g>
-          <!-- Brisbane -->
-          <g class="city-pin" onclick="scrollToState('qld')">
-            <circle class="pin-ripple" cx="626" cy="310" r="12" fill="#54c1af" opacity="0.2"/>
-            <circle class="pin-core" cx="626" cy="310" r="6" fill="#54c1af" opacity="0.95"/>
-            <text x="640" y="306" font-family="Open Sans,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.85)">Brisbane</text>
-          </g>
-          <!-- Sydney -->
-          <g class="city-pin" onclick="scrollToState('nsw')">
-            <circle class="pin-ripple" cx="628" cy="378" r="12" fill="#54c1af" opacity="0.2"/>
-            <circle class="pin-core" cx="628" cy="378" r="6" fill="#54c1af" opacity="0.95"/>
-            <text x="642" y="374" font-family="Open Sans,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.85)">Sydney</text>
-          </g>
-          <!-- Melbourne -->
-          <g class="city-pin" onclick="scrollToState('vic')">
-            <circle class="pin-ripple" cx="556" cy="450" r="12" fill="#54c1af" opacity="0.2"/>
-            <circle class="pin-core" cx="556" cy="450" r="6" fill="#54c1af" opacity="0.95"/>
-            <text x="570" y="446" font-family="Open Sans,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.85)">Melbourne</text>
-          </g>
-          <!-- Hobart -->
-          <g class="city-pin" onclick="scrollToState('tas')">
-            <circle class="pin-ripple" cx="558" cy="530" r="11" fill="#54c1af" opacity="0.2"/>
-            <circle class="pin-core" cx="558" cy="530" r="5" fill="#54c1af" opacity="0.95"/>
-            <text x="572" y="526" font-family="Open Sans,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.85)">Hobart</text>
-          </g>
-          <!-- Canberra -->
-          <g class="city-pin" onclick="scrollToState('act')">
-            <circle class="pin-ripple" cx="598" cy="408" r="10" fill="#54c1af" opacity="0.2"/>
-            <circle class="pin-core" cx="598" cy="408" r="5" fill="#54c1af" opacity="0.95"/>
-            <text x="612" y="404" font-family="Open Sans,sans-serif" font-size="10" font-weight="700" fill="rgba(255,255,255,0.85)">Canberra</text>
-          </g>
-        </svg>
-      </div>
-          <style>
-            .city-pin { cursor: pointer; }
-            .city-pin circle { transition: r 0.2s, opacity 0.2s; }
-            .city-pin:hover .pin-ripple { r: 18; opacity: 0.35; }
-            .city-pin:hover .pin-core { r: 9; filter: drop-shadow(0 0 8px #54c1af); }
-            .city-pin:hover text { fill: #54c1af !important; }
-          </style>
-
-          <!-- Mainland Australia - accurate outline -->
-          <path d="
-            M 328,42 L 338,44 L 352,50 L 362,58 L 368,68 L 370,80 L 366,92 L 358,102
-            L 352,110 L 350,120 L 354,130 L 362,138 L 374,144 L 388,148 L 404,150
-            L 420,150 L 436,148 L 452,144 L 468,138 L 484,130 L 498,120 L 510,110
-            L 520,98 L 528,86 L 534,74 L 538,62 L 540,52 L 540,44 L 538,38 L 534,34
-            L 528,32 L 520,32 L 512,34 L 504,38 L 496,44 L 488,50 L 480,56 L 472,60
-            L 464,62 L 456,62 L 450,60 L 446,56 L 444,50 L 444,44 L 446,38 L 450,34
-            L 456,32 L 462,32 L 468,34 L 472,38 
-            M 540,44 L 548,46 L 558,50 L 570,56 L 584,64 L 598,74 L 612,86 L 626,100
-            L 640,116 L 654,134 L 666,152 L 676,170 L 684,188 L 690,206 L 694,224
-            L 696,242 L 696,260 L 694,278 L 690,294 L 684,308 L 676,320 L 666,330
-            L 654,338 L 642,344 L 630,348 L 618,350 L 606,350 L 596,348 L 588,344
-            L 582,338 L 578,330 L 576,320 L 576,310 L 578,300 L 582,292 L 588,286
-            L 594,282 L 600,280 L 606,280 L 610,282 L 612,286 L 612,292 L 608,298
-            L 602,302 L 596,304 L 590,304 L 586,300 L 584,294
-            M 696,260 L 700,278 L 706,296 L 714,314 L 724,332 L 736,350 L 750,368
-            L 764,384 L 778,398 L 790,410 L 800,420 L 808,428 L 814,434 L 818,438
-            L 820,440 L 820,444 L 818,450 L 814,458 L 808,468 L 800,478 L 790,488
-            L 778,496 L 766,502 L 754,506 L 742,508 L 730,508 L 718,506 L 706,502
-            L 694,496 L 682,488 L 670,478 L 658,466 L 648,454 L 640,442 L 634,430
-            L 630,420 L 628,410 L 628,402 L 630,394 L 634,388 L 640,384 L 646,382
-            L 652,382 L 656,384 L 658,388 L 658,394 L 654,400 L 648,404 L 642,406
-            L 636,404 L 632,400
-            M 628,410 L 622,422 L 614,436 L 604,450 L 592,464 L 578,478 L 562,490
-            L 546,500 L 530,508 L 514,514 L 498,518 L 482,520 L 466,520 L 450,518
-            L 434,514 L 420,508 L 406,500 L 394,490 L 382,478 L 372,466 L 364,454
-            L 358,442 L 354,432 L 352,422 L 352,414 L 354,406 L 358,400 L 364,396
-            L 370,394 L 376,394 L 380,396 L 382,400 L 382,406 L 378,412 L 372,416
-            L 366,418 L 360,416 L 356,412
-            M 352,422 L 346,434 L 338,448 L 328,462 L 316,476 L 302,490 L 286,502
-            L 270,512 L 254,520 L 238,526 L 222,530 L 206,532 L 190,532 L 174,530
-            L 158,526 L 144,520 L 132,512 L 122,502 L 114,490 L 108,478 L 104,466
-            L 102,454 L 102,442 L 104,430 L 108,420 L 114,410 L 120,402 L 126,396
-            L 130,392 L 132,390
-            M 102,454 L 98,466 L 96,480 L 96,494 L 98,508 L 102,522 L 108,534
-            L 116,546 L 126,556 L 138,564 L 152,570 L 168,574 L 184,576 L 200,576
-            L 214,574 L 226,570 L 236,564 L 244,556 L 250,546 L 254,534 L 256,522
-            L 256,510 L 254,498 L 250,488 L 244,478 L 238,470 L 232,464 L 226,460
-            L 222,458 L 220,458
-            M 256,522 L 260,534 L 266,548 L 274,562 L 284,576 L 296,590 L 310,602
-            L 326,612 L 342,620 L 358,626 L 374,630 L 390,632 L 406,632 L 420,630
-            L 432,626 L 442,620 L 450,612 L 456,602 L 460,590 L 462,578 L 462,566
-            L 460,554 L 456,544 L 450,534 L 444,526 L 438,520 L 432,516 L 428,514
-            M 462,578 L 466,590 L 472,604 L 480,618 L 490,630 L 502,642 L 516,652
-            L 530,660 L 544,666 L 558,670 L 572,672 L 584,672 L 594,670 L 602,666
-            L 608,660 L 612,652 L 614,644 L 612,636 L 608,628 L 602,622 L 594,616
-            L 586,612 L 578,610 L 570,610 L 564,612 L 560,616 L 558,622 L 558,628
-            L 560,634 L 564,638 L 570,640 L 576,640 L 580,638 L 582,634
-            M 328,42 L 318,44 L 308,48 L 298,54 L 288,62 L 278,72 L 268,84
-            L 258,98 L 248,114 L 238,130 L 228,148 L 218,166 L 208,184 L 198,202
-            L 188,220 L 178,238 L 168,256 L 158,272 L 148,288 L 138,302 L 128,314
-            L 120,324 L 114,332 L 110,338 L 108,342 L 108,346 L 110,350 L 114,354
-            L 120,358 L 128,360 L 136,360 L 142,358 L 146,354 L 148,350 L 148,346
-            L 146,342 L 142,340 L 138,340
-          " fill="none" stroke="none"/>
-
-          <!-- Clean filled mainland shape -->
-          <path d="
-            M 334,38 C 340,36 352,38 362,44 C 372,50 378,60 380,72 C 382,84 378,96 370,106
-            C 362,116 350,122 340,126 C 350,130 364,136 378,140 C 392,144 408,146 424,146
-            C 440,146 456,142 470,136 C 484,130 496,120 506,108 C 516,96 522,82 524,68
-            C 526,54 522,42 516,36 C 510,30 502,28 494,30 C 486,32 480,38 476,46
-            C 472,54 472,64 476,72 C 480,80 488,86 496,88 C 504,90 512,88 518,84
-            C 530,78 540,68 548,58 C 558,66 570,76 582,88 C 596,102 610,118 622,136
-            C 634,154 644,172 652,192 C 660,212 664,232 666,252 C 668,272 666,292 660,310
-            C 654,328 644,344 632,356 C 636,364 638,374 636,384 C 634,394 628,402 620,406
-            C 626,418 634,432 644,448 C 656,466 670,484 684,500 C 698,516 712,530 724,542
-            C 736,554 746,564 754,572 C 762,580 766,586 768,590 C 770,594 768,598 764,602
-            C 760,606 754,608 746,610 C 738,612 730,612 722,610 C 714,608 706,604 700,598
-            C 694,592 690,584 688,576 C 686,568 686,560 688,552 C 684,560 678,568 670,574
-            C 662,580 652,584 642,586 C 632,588 622,586 614,582 C 618,590 620,600 618,610
-            C 616,620 610,630 602,638 C 594,646 584,652 574,656 C 564,660 552,662 540,662
-            C 528,662 516,660 504,654 C 492,648 480,638 470,626 C 460,614 452,600 446,586
-            C 440,600 432,614 422,626 C 412,638 400,648 388,654 C 376,660 362,664 348,664
-            C 334,664 320,660 308,654 C 296,648 284,638 274,626 C 264,614 256,600 250,586
-            C 244,572 240,558 238,544 C 232,556 224,566 214,574 C 204,582 192,588 180,592
-            C 168,596 156,596 144,594 C 132,592 122,586 114,578 C 106,570 100,560 96,548
-            C 92,536 90,522 90,508 C 90,494 92,480 96,466 C 100,452 106,440 112,430
-            C 118,420 124,412 130,406 C 124,400 118,392 114,382 C 110,372 108,360 108,348
-            C 108,336 110,324 114,312 C 118,300 124,290 130,280 C 120,268 110,254 102,240
-            C 94,226 88,210 84,194 C 80,178 78,162 78,146 C 78,130 80,114 86,100
-            C 92,86 100,74 110,64 C 120,54 132,46 144,42 C 156,38 170,36 184,36
-            C 198,36 214,38 230,42 C 246,46 262,52 278,58 C 294,64 310,72 324,80
-            C 316,66 314,52 318,42 C 322,36 328,34 334,38 Z
-          " fill="rgba(84,193,175,0.1)" stroke="rgba(84,193,175,0.4)" stroke-width="2" stroke-linejoin="round"/>
-
-          <!-- Tasmania -->
-          <ellipse cx="480" cy="730" rx="52" ry="38" fill="rgba(84,193,175,0.1)" stroke="rgba(84,193,175,0.4)" stroke-width="2"/>
-
-          <!-- City dots -->
-          <!-- Perth -->
-          <g class="city-pin" onclick="scrollToState('wa')">
-            <circle class="pin-ripple" cx="112" cy="490" r="12" fill="#54c1af" opacity="0.2"/>
-            <circle class="pin-core" cx="112" cy="490" r="6" fill="#54c1af" opacity="0.95"/>
-            <text x="98" y="486" font-family="Open Sans,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.75)" text-anchor="end">Perth</text>
-          </g>
-          <!-- Darwin -->
-          <g class="city-pin" onclick="scrollToState('nt')">
-            <circle class="pin-ripple" cx="350" cy="78" r="12" fill="#54c1af" opacity="0.2"/>
-            <circle class="pin-core" cx="350" cy="78" r="6" fill="#54c1af" opacity="0.95"/>
-            <text x="364" y="74" font-family="Open Sans,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.75)">Darwin</text>
-          </g>
-          <!-- Adelaide -->
-          <g class="city-pin" onclick="scrollToState('sa')">
-            <circle class="pin-ripple" cx="390" cy="590" r="12" fill="#54c1af" opacity="0.2"/>
-            <circle class="pin-core" cx="390" cy="590" r="6" fill="#54c1af" opacity="0.95"/>
-            <text x="376" y="586" font-family="Open Sans,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.75)" text-anchor="end">Adelaide</text>
-          </g>
-          <!-- Brisbane -->
-          <g class="city-pin" onclick="scrollToState('qld')">
-            <circle class="pin-ripple" cx="680" cy="480" r="12" fill="#54c1af" opacity="0.2"/>
-            <circle class="pin-core" cx="680" cy="480" r="6" fill="#54c1af" opacity="0.95"/>
-            <text x="694" y="476" font-family="Open Sans,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.75)">Brisbane</text>
-          </g>
-          <!-- Sydney -->
-          <g class="city-pin" onclick="scrollToState('nsw')">
-            <circle class="pin-ripple" cx="660" cy="560" r="12" fill="#54c1af" opacity="0.2"/>
-            <circle class="pin-core" cx="660" cy="560" r="6" fill="#54c1af" opacity="0.95"/>
-            <text x="674" y="556" font-family="Open Sans,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.75)">Sydney</text>
-          </g>
-          <!-- Melbourne -->
-          <g class="city-pin" onclick="scrollToState('vic')">
-            <circle class="pin-ripple" cx="560" cy="640" r="12" fill="#54c1af" opacity="0.2"/>
-            <circle class="pin-core" cx="560" cy="640" r="6" fill="#54c1af" opacity="0.95"/>
-            <text x="574" y="636" font-family="Open Sans,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.75)">Melbourne</text>
-          </g>
-          <!-- Hobart -->
-          <g class="city-pin" onclick="scrollToState('tas')">
-            <circle class="pin-ripple" cx="480" cy="730" r="11" fill="#54c1af" opacity="0.2"/>
-            <circle class="pin-core" cx="480" cy="730" r="5" fill="#54c1af" opacity="0.95"/>
-            <text x="494" y="726" font-family="Open Sans,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.75)">Hobart</text>
-          </g>
-          <!-- Canberra -->
-          <g class="city-pin" onclick="scrollToState('act')">
-            <circle class="pin-ripple" cx="620" cy="592" r="10" fill="#54c1af" opacity="0.2"/>
-            <circle class="pin-core" cx="620" cy="592" r="5" fill="#54c1af" opacity="0.95"/>
-            <text x="634" y="588" font-family="Open Sans,sans-serif" font-size="10" font-weight="700" fill="rgba(255,255,255,0.75)">Canberra</text>
-          </g>
-        </svg>
-      </div>
-
-    <div class="states-grid">
+    <div class="states-grid" style="margin-top:0">
       <div class="state-card reveal" id="state-nsw">
         <div class="state-header"><div class="state-abbr">NSW</div></div>
         <div class="state-links">
@@ -759,7 +486,21 @@
   <div class="container">
     <div class="section-label reveal">Nationwide</div>
     <h2 class="section-title reveal reveal-delay-1">National support,<br><span style="color:var(--oceanic)">for everyone</span></h2>
+
+    <!-- Sonder callout -->
+    <div class="reveal reveal-delay-2" style="display:flex;align-items:center;gap:24px;background:rgba(84,193,175,0.07);border:1px solid rgba(84,193,175,0.2);border-radius:20px;padding:28px 32px;margin:32px 0 40px;max-width:820px">
+      <a href="https://play.google.com/store/apps/details?id=com.sonder.member.android&pcampaignid=web_share" target="_blank" style="flex-shrink:0">
+        <img src="data:image/png;base64,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" alt="Sonder" style="width:72px;height:72px;border-radius:16px;display:block">
+      </a>
+      <div>
+        <div style="font-family:'Open Sans',sans-serif;font-size:18px;font-weight:700;margin-bottom:8px">Sonder — Your 24/7 Wellbeing App</div>
+        <p style="font-size:14px;line-height:1.7;color:rgba(255,255,255,0.75);margin-bottom:12px">All Carbiz employees have 24/7 access to Sonder which is a 24/7 safety and wellbeing service, connecting you to the help you need at the touch of a button. Including mental and physical health support from our team of nurses, wellbeing experts and in-person responders.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.sonder.member.android&pcampaignid=web_share" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:rgba(84,193,175,0.15);border:1px solid rgba(84,193,175,0.35);border-radius:100px;padding:7px 16px;font-size:13px;font-weight:700;color:var(--oceanic);text-decoration:none">Download Sonder →</a>
+      </div>
+    </div>
+
     <p class="section-body reveal reveal-delay-2">These services are available to all Australians, 24/7, for free. You don't need a reason — just reach out.</p>
+
     <div class="crisis-bar reveal reveal-delay-3" style="margin-top:32px">
       If someone's life is at immediate risk, call <strong>000</strong> &nbsp;|&nbsp;
       <a href="tel:131114">Lifeline 13 11 14</a> &nbsp;|&nbsp;
@@ -845,41 +586,41 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <img src="carbiz-logo.png" alt="Carbiz" style="height:30px;filter:brightness(0) invert(1)" onerror="this.style.display='none'">
+    <svg height="28" viewBox="0 0 155 52" xmlns="http://www.w3.org/2000/svg" aria-label="Carbiz">
+      <text y="44" font-family="'Open Sans',sans-serif" font-weight="800" font-size="46">
+        <tspan fill="#ffffff">car</tspan><tspan fill="#54c1af">b</tspan>
+      </text>
+      <circle cx="110" cy="12" r="5" fill="#ffffff"/>
+      <circle cx="110" cy="26" r="5" fill="#ffffff"/>
+      <circle cx="110" cy="40" r="5" fill="#54c1af"/>
+      <text x="118" y="44" font-family="'Open Sans',sans-serif" font-weight="800" font-size="46" fill="#54c1af">z</text>
+    </svg>
     <p class="footer-text">Carbiz Mate's Day initiative — May 8. If someone is in immediate danger, call <strong style="color:var(--coral)">000</strong>.</p>
     <p class="footer-text" style="font-size:12px;color:rgba(255,255,255,0.22)">MAYEIGHT is a Movember initiative. Carbiz proudly supports mental health awareness for everyone.</p>
   </div>
 </footer>
 
 <script>
-  // Map dot → scroll to state card
   function scrollToState(stateKey) {
     const el = document.getElementById('state-' + stateKey);
     if (!el) return;
     el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    // flash highlight
     el.style.transition = 'box-shadow 0.15s ease, border-color 0.15s ease';
     el.style.boxShadow = '0 0 0 3px #54c1af, 0 0 32px rgba(84,193,175,0.5)';
     el.style.borderColor = '#54c1af';
-    setTimeout(() => {
-      el.style.boxShadow = '';
-      el.style.borderColor = '';
-    }, 1800);
+    setTimeout(() => { el.style.boxShadow = ''; el.style.borderColor = ''; }, 1800);
   }
 
-  // Meat pie floaters 🥧
   const pieBg = document.getElementById('pieBg');
-  const icons = ['🥧','🥧','🥧','🥧','🥧','🥧'];
   for (let i = 0; i < 24; i++) {
     const el = document.createElement('div');
     el.className = 'pie-float';
-    el.textContent = icons[Math.floor(Math.random() * icons.length)];
+    el.textContent = '🥧';
     const size = Math.random() * 16 + 20;
     el.style.cssText = `font-size:${size}px;left:${Math.random()*100}%;top:${Math.random()*100}%;animation-duration:${Math.random()*14+10}s;animation-delay:${Math.random()*14}s;`;
     pieBg.appendChild(el);
   }
 
-  // Scroll reveal
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
